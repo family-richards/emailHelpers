@@ -56,7 +56,7 @@ If you are a windows user:
 	After installing python 3, type "sudo python3 setup.py install".
 	But if typing in "python" did work, check and see if it says after "Python " a 3 or a 2.
 	If it's a 3, type "sudo python setup.py install"
-	If it's a 2, install python 3. Look at this page for the files: https://docs.python-guide.org/starting/install3/linux/ 
+	If it's a 2, install python 3. Look at this page for the files: https://www.python.org/downloads/windows/ 
 	After installing python 3, type "sudo python3 setup.py install".
 Apple and other platforms are coming soon. If you have a platform that isn't listed, please let the authors know.
 See INTERFACE for more info about how to use this package.
