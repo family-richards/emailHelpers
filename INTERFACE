@@ -1,0 +1,79 @@
+emailHelpers is a combination of 2 classes to make the sending and managing of emails in python easier.
+It is made of two classes: Mailer and Email.
+Once you have added the library as shown in the README, you can import them as:
+from emailHelpers import Mailer, Email
+or
+from emailHelpers import *
+Also, you can say
+import emailHelpers
+and then when you want to declare a mailer or email, say
+mailer = emailHelpers.Mailer()
+or
+email = emailHelpers.Email()
+instead of
+mailer = Mailer()
+or
+email = Email()
+Sometimes a little extra code at the import saves you a lot of characters in the long run.
+Now, by now you probably wondered "Where's the interface?". Don't worry, the rest of this file is all about the interface.
+I hope I put some useful info in the docstrings and the function names, but just in case, I added this file.(Okay, maybe I lied a bit.)
+When you declare an email, it actually isn't as easy as my earlier example.
+You have to pass it who it's from.
+So, for example, if your email adress was fred_loves_pickles@vinegar.helps you would declare a Email like this:
+email = Email("fred_loves_pickles@vinegar.helps")
+That's the first bit.
+The next is declaring a Mailer.
+You need to pass it your email adress and your password, and if it's not gmail the servar name and port number.
+So if your email adress was fred_loves_pickles@vinegar.helps, and your password was "vinegar + cucumbers = pickles", and your server name was 
+smtp.vinegar.helps.everyone, and the port was 567, you would say
+mailer = Mailer("fred_loves_pickles@vinegar.helps","vinegar + cucumbers = pickles",emailServer="smtp.vinegar.helps.everyone",emailServerPort=
+567)
+And if you use gmail, make sure to allow less secure apps, and you don't need to type anything other than your email adress and your password.
+Wow! So much lines used already! ARRGH! I JUST LIED AGAIN!(remember how I said "Don't worry, the rest of this file is all about the interface."
+?)
+Now. Once you're done using a Mailer, run
+[name of mailer object].quitSelf()
+To convert a MIMEMultipart or an Email to a string, you can either run their .as_string() functions, or if you have a spare Mailer around,
+text = [name of mailer object].MIMEToString([MIMEMultipart or an Email object])
+Finally, to send a mail, run
+[name of mailer object].sendMail([string from Email or MIMEMultipart object's .as_string() function],[people to send to in an array])
+That's the Mailer object. Now on to the slightly more complex Email object.
+We'll start with the simpler ones.
+To add a subject, run
+[name of email object].setSubject([subject])
+To change what the people think that it was sent to, run
+[name of email object].setTitle([guess])
+To add your body, run
+[name of email object].setBody([body])
+I recommend using """ to have newlines. example:
+body = """This is the email body.
+This is the second line.
+Sincerely, your python script"""
+When you want to send your email object, you should run
+[name of email object].as_string()
+So you would say
+[name of mailer object].sendMail([name of email object].as_string(),[people to send to in an array])
+to send your email.
+To attatch a file, use addAttachmentFromFile.
+Give it the complete filepath, and it'll add your file to the email.
+Okay, now we're starting to get into the advanced stuff.
+If you want to attatch a file from a variable, use addAttachment.
+It takes the attachment and the filename to call it.
+Use it like this:
+[name of email object].addAttachment([loaded attachment],[filename])
+To load a file, use loadAttachment. It will return a file that can be passed to addAttachment.
+Use it like this:
+file = [name of email object].loadAttachment([complete filepath])
+The simpler function, if you don't want to disguise your filename, is addAttachmentFromFile. It was covered earlier.
+To get the MIMEMultipart behind the object, use MimeBehind.
+Use it like this:
+multipart = [name of email object].MimeBehind()
+To access properties of the MIMEMultipart, use getAttr and setAttr.
+They are used like this:
+attribute = [name of email object].getAttr([attribute to get])
+[name of email object].getAttr([attribute to set],[new value of attribute])
+Finally, if you press Run module on the library, and use the shell, you can call addMyselfToEmail to add the library to your
+Email object. It is used like this:
+[name of email object].addMyselfToEmail()
+You're dedicated to read all of this, you know. Good job! I hope that this library makes managing emails easier.
+See you later! If you have any questions or bugs, feel free to make an issue. Bye!
