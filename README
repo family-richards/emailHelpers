@@ -36,7 +36,7 @@ Instructions to install are ||.
                            \||/
                             \/
 To install emailHelpers:
-First, download this repo. Then, unzip the .zip file. Navigate in your terminal/shell into the result of the unzippped .zip
+First, download this repo. Then, navigate in your terminal/shell into the repo. Now, follow the following instructions.
 If you are a linux/ubuntu/raspberry pi user:
 	Type in your terminal/shell "python3".
 	If that works, type "sudo python3 setup.py install".
