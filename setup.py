@@ -7,6 +7,7 @@ setup(name="emailHelpers",
       author="Kendell R.",
       author_email="ejrejr@hotmail.com",
       license="MIT",
+      description="Two classes to help with managing emails.",
       download_url="https://github.com/family-richards/Python-Email-Helpers",
       url="https://github.com/family-richards/Python-Email-Helpers")
 print("Package installed!")
