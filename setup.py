@@ -7,5 +7,6 @@ setup(name="emailHelpers",
       author="Kendell R.",
       author_email="ejrejr@hotmail.com",
       license="MIT",
+      download_url="https://github.com/family-richards/Python-Email-Helpers",
       url="https://github.com/family-richards/Python-Email-Helpers")
 print("Package installed!")
