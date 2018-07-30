@@ -49,13 +49,13 @@ If you are a linux/ubuntu/raspberry pi user:
 	After installing python 3, type "sudo python3 setup.py install".
 If you are a windows user:
 	Type in your terminal/shell "python3".
-	If that works, type "sudo python3 setup.py install".
+	If that works, type "python3 setup.py install".
 	If typing in "python3" didn't work, try typing "python".
 	If that doesn't work, install python 3. Look at this page for the files: https://www.python.org/downloads/windows/
-	After installing python 3, type "sudo python3 setup.py install".
+	After installing python 3, type "python3 setup.py install".
 	But if typing in "python" did work, check and see if it says after "Python " a 3 or a 2.
-	If it's a 3, type "sudo python setup.py install"
+	If it's a 3, type "python setup.py install"
 	If it's a 2, install python 3. Look at this page for the files: https://www.python.org/downloads/windows/ 
-	After installing python 3, type "sudo python3 setup.py install".
+	After installing python 3, type "python3 setup.py install".
 Apple and other platforms are coming soon. If you have a platform that isn't listed, please let the authors know.
 See INTERFACE for more info about how to use this package.
