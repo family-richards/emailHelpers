@@ -4,8 +4,6 @@ Regular:					With emailHelpers:
 import smtplib					from emailHelpers import *
 from email.MIMEMultipart import MIMEMultipart	(Reduction)
 from email.MIMEText import MIMEText		(Reduction)
-						
-						
 fromaddr = "YOUR ADDRESS"			fromaddr = "YOUR ADDRESS"
 toaddr = "ADDRESS YOU WANT TO SEND TO"		toaddr = "ADDRESS YOU WANT TO SEND TO"
 msg = MIMEMultipart()				email = Email(fromaddr)
