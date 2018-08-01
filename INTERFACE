@@ -6,7 +6,7 @@ or
 from emailHelpers import *
 Also, you can say
 import emailHelpers
-and then when you want to declare a mailer or email, say
+and then when you want to declare a mailer or email, say(note: this is the wrong syntax for the parameters, see below for more info)
 mailer = emailHelpers.Mailer()
 or
 email = emailHelpers.Email()
@@ -31,8 +31,7 @@ mailer = Mailer("fred_loves_pickles@vinegar.helps","vinegar + cucumbers = pickle
 And if you use gmail, make sure to allow less secure apps, and you don't need to type anything other than your email adress and your password.
 Wow! So much lines used already! ARRGH! I JUST LIED AGAIN!(remember how I said "Don't worry, the rest of this file is all about the interface."
 ?)
-Now. Once you're done using a Mailer, run
-[name of mailer object].quitSelf()
+Now, back to the topic.
 To convert a MIMEMultipart or an Email to a string, you can either run their .as_string() functions, or if you have a spare Mailer around,
 text = [name of mailer object].MIMEToString([MIMEMultipart or an Email object])
 Finally, to send a mail, run
