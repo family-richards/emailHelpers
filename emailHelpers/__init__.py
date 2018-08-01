@@ -59,7 +59,7 @@ class Email():
     def addAttachmentFromFile(self,filepath):
         """straight add from filename and path to load file"""
         from os.path import basename
-        self.addAttatchment(self.loadAttatchment(filepath),basename(filepath))
+        self.addAttachment(self.loadAttachment(filepath),basename(filepath))
     def MimeBehind(self):
         """returns the hidden MIMEMultipart"""
         return self.MimeEmail
