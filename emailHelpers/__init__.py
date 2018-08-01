@@ -49,10 +49,10 @@ class Email():
         self.MimeEmail.attach(part)
     def setSubject(self,subject):
         """set subject of email"""
-        self.setAttribute("Subject",subject)
+        self.setAttr("Subject",subject)
     def setTo(self,to):
         """set who the email is to"""
-        self.setAttribute("To",to)
+        self.setAttr("To",to)
     def loadAttachment(self,filepath):
         """load attatchment for adding"""
         return open(filepath, "rb")
