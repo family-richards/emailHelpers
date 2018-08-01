@@ -4,7 +4,7 @@ https://stackoverflow.com/questions/5770951/python-how-can-i-change-the-to-field
 https://stackoverflow.com/questions/4152963/get-the-name-of-current-script-with-python"""
 class Mailer():
     """A class to help with the mailing of emails, default server is gmail"""
-    def __init__(self,emailFrom,emailPassword,emailServer='smtp.gmail.com',emailServerPort=465):
+    def __init__(self,emailFrom,emailPassword,emailServer='smtp.gmail.com',emailServerPort=465,debug=0):
         import smtplib
         self.server = smtplib.SMTP_SSL(emailServer, emailServerPort)
         self.server.ehlo()
@@ -14,8 +14,6 @@ class Mailer():
         self.emailServer = emailServer
         self.emailServerPort = emailServerPort
         self.server.login(emailFrom,emailPassword)
-    def quitSelf(self):
-        """When done using a Mailer, run this."""
         self.server.quit()
     def MIMEToString(self,Mimemail):
         """Takes a Email or a MIMEMultipart and converts them
@@ -23,11 +21,11 @@ into a string you can use in sendMail."""
         return Mimemail.as_string()
     def sendMail(self,string,people):
         """Sends a mail."""
-        self.server.sendmail(self.emailFrom,people,string)
-        self.server.quit()
         self.server = self.smtplib.SMTP_SSL(self.emailServer, self.emailServerPort)
         self.server.ehlo()
         self.server.login(self.emailFrom,self.emailPassword)
+        self.server.sendmail(self.emailFrom,people,string)
+        self.server.quit()
 class Email():
     """A class to help with the making of emails"""
     def __init__(self,emailFrom):
