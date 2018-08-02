@@ -36,6 +36,12 @@ To convert a MIMEMultipart or an Email to a string, you can either run their .as
 text = [name of mailer object].MIMEToString([MIMEMultipart or an Email object])
 Finally, to send a mail, run
 [name of mailer object].sendMail([string from Email or MIMEMultipart object's .as_string() function],[people to send to in an array])
+Oh, and I forgot: If you need have a custom server, you can make a function. Here's the rules: It has to return an open server ready for
+sending mails, and it has to accept the parameters(in order) the email who the emails sent will look like they are coming from[, the
+email account's password[, the email server[, and the email server port[.
+[ (the function doesn't have to do anything with it but does have to accept it)
+Just pass that in when creating your Mailer object as
+erverOpenfunction=[name of your server opening function(important: no parentheses)]
 That's the Mailer object. Now on to the slightly more complex Email object.
 We'll start with the simpler ones.
 To add a subject, run
