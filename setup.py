@@ -2,7 +2,7 @@ print("Going to install...")
 from distutils.core import setup
 print("Imported setup tool...")
 setup(name="emailHelpers",
-      version='0.1.0',
+      version='1.0',
       packages=['emailHelpers'],
       author="Kendell R.",
       author_email="ejrejr@hotmail.com",
