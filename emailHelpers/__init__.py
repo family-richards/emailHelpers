@@ -4,8 +4,9 @@ https://stackoverflow.com/questions/5770951/python-how-can-i-change-the-to-field
 https://stackoverflow.com/questions/4152963/get-the-name-of-current-script-with-python"""
 class Mailer():
     """A class to help with the mailing of emails, default server is gmail"""
-    def __init__(self,emailFrom,emailPassword,emailServer='smtp.gmail.com',emailServerPort=465,debug=0,serverOpenFunction=None):
+    def __init__(self,emailFrom,emailPassword,emailServer='smtp.gmail.com',emailServerPort=465,serverOpenFunction=None):
         import smtplib
+        self.serverOpenFunction = serverOpenFunction
         if serverOpenFunction is None:
             self.server = smtplib.SMTP_SSL(emailServer, emailServerPort)
             self.server.ehlo()
@@ -17,20 +18,24 @@ class Mailer():
             self.server.login(emailFrom,emailPassword)
             self.server.quit()
         else:
-            self.server = serverOpenFunction
+            self.server = serverOpenFunction(emailFrom,emailPassword,emailServer,emailServerPort)
             self.server.quit()
-            self.serverOpenFunction = serverOpenFunction
     def MIMEToString(self,Mimemail):
         """Takes a Email or a MIMEMultipart and converts them
 into a string you can use in sendMail."""
         return Mimemail.as_string()
     def sendMail(self,string,people):
         """Sends a mail."""
-        self.server = self.smtplib.SMTP_SSL(self.emailServer, self.emailServerPort)
-        self.server.ehlo()
-        self.server.login(self.emailFrom,self.emailPassword)
-        self.server.sendmail(self.emailFrom,people,string)
-        self.server.quit()
+        if self.serverOpenFunction is None:
+            self.server = self.smtplib.SMTP_SSL(self.emailServer, self.emailServerPort)
+            self.server.ehlo()
+            self.server.login(self.emailFrom,self.emailPassword)
+            self.server.sendmail(self.emailFrom,people,string)
+            self.server.quit()
+        else:
+            self.server = self.serverOpenFunction(self.emailFrom,self.emailPassword,self.emailServer,self.emailServerPort)
+            self.server.sendmail(self.emailFrom,people,string)
+            self.server.quit()
 class Email():
     """A class to help with the making of emails"""
     def __init__(self,emailFrom):
