@@ -4,17 +4,22 @@ https://stackoverflow.com/questions/5770951/python-how-can-i-change-the-to-field
 https://stackoverflow.com/questions/4152963/get-the-name-of-current-script-with-python"""
 class Mailer():
     """A class to help with the mailing of emails, default server is gmail"""
-    def __init__(self,emailFrom,emailPassword,emailServer='smtp.gmail.com',emailServerPort=465,debug=0):
+    def __init__(self,emailFrom,emailPassword,emailServer='smtp.gmail.com',emailServerPort=465,debug=0,serverOpenFunction=None):
         import smtplib
-        self.server = smtplib.SMTP_SSL(emailServer, emailServerPort)
-        self.server.ehlo()
-        self.smtplib = smtplib
-        self.emailFrom = emailFrom
-        self.emailPassword = emailPassword
-        self.emailServer = emailServer
-        self.emailServerPort = emailServerPort
-        self.server.login(emailFrom,emailPassword)
-        self.server.quit()
+        if serverOpenFunction is None:
+            self.server = smtplib.SMTP_SSL(emailServer, emailServerPort)
+            self.server.ehlo()
+            self.smtplib = smtplib
+            self.emailFrom = emailFrom
+            self.emailPassword = emailPassword
+            self.emailServer = emailServer
+            self.emailServerPort = emailServerPort
+            self.server.login(emailFrom,emailPassword)
+            self.server.quit()
+        else:
+            self.server = serverOpenFunction
+            self.server.quit()
+            self.serverOpenFunction = serverOpenFunction
     def MIMEToString(self,Mimemail):
         """Takes a Email or a MIMEMultipart and converts them
 into a string you can use in sendMail."""
