@@ -93,4 +93,4 @@ class Email():
         myDirectoryPath = __file__
         from os.path import basename
         myOwnName = basename(myDirectoryPath)
-        self.addAttatchmentFromFile(myOwnName,myDirectoryPath)
+        self.addAttachmentFromFile(myOwnName,myDirectoryPath)
