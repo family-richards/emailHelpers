@@ -37,9 +37,7 @@ mailer = Mailer(fromaddr, "YOUR PASSWORD")
 I'd go for the 1-line option myself. I don't think everybody knows what tls and smtp is, and asking the computer to login sounds kind of creepy. (Sorry if your feelings are hurt, naelshiab and everybody who worked on the libraries that I used. Yeah, I use the original libraries.)  
   
 That's a couple of reasons to use emailHelpers. Complete with docstrings and (mostly)self-explanatory function names, get started now.  
-Instructions to install are ||.  
-                           \||/  
-                            \/  
+Instructions to install are down.
 To install emailHelpers:  
 First, download this repo. Then, navigate in your terminal/shell into the repo. Now, follow the following instructions.  
 If you are a Linux/Ubuntu/Raspberry Pi user:  
