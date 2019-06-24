@@ -1,8 +1,8 @@
 This is a python 3 package meant to make managing emails easier.
 It will probably help to add readability and reduce lines. Here's an example of how much it reduces lines:
 
-Regular:					With emailHelpers:
-```python
+Regular is on the left.	With emailHelpers is on the right.
+```python3
 import smtplib					from emailHelpers import *
 from email.MIMEMultipart import MIMEMultipart	(Reduction)
 from email.MIMEText import MIMEText		(Reduction)
@@ -25,13 +25,13 @@ server.quit()					mailer.quitSelf()
 ```
 
 Look! We reduced the number of lines by 6 lines! Also, which makes more sense to someone who's learning python:
-```python
+```python3
 server = smtplib.SMTP('smtp.gmail.com', 587)
 server.starttls()
 server.login(fromaddr, "YOUR PASSWORD")
 ```
 or
-```python
+```python3
 mailer = Mailer(fromaddr, "YOUR PASSWORD")
 ```
 I'd go for the 1-line option myself. I don't think everybody knows what tls and smtp is,
