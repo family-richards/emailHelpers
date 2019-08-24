@@ -24,7 +24,7 @@ server.sendmail(fromaddr, toaddr, text)		mailer.sendMail(text,toaddr)
 server.quit()					mailer.quitSelf()
 ```
 
-Look! We reduced the number of lines by 6 lines! Also, which makes more sense to someone who's learning python:
+Look! We reduced the number of lines by 6 lines! Also, which makes more sense to someone who's learning Python:
 ```python3
 server = smtplib.SMTP('smtp.gmail.com', 587)
 server.starttls()
@@ -34,9 +34,9 @@ or
 ```python3
 mailer = Mailer(fromaddr, "YOUR PASSWORD")
 ```
-I'd go for the 1-line option myself. I don't think everybody knows what tls and smtp is, and asking the computer to login sounds kind of creepy. (Sorry if your feelings are hurt, naelshiab and everybody who worked on the libraries that I used. Yeah, I use the original libraries.)  
+I'd go for the 1-line option myself. I don't think everybody knows what tls and smtp is, and asking the computer to login sounds kind of creepy. (Sorry if your feelings are hurt, naelshiab and everybody who worked on the libraries that I used. Yes, I do use the original libraries.)  
   
-That's a couple of reasons to use emailHelpers. Complete with docstrings and (mostly)self-explanatory function names, get started now.  
+That's a couple of reasons to use emailHelpers. Complete with docstrings and (mostly) self-explanatory function names, get started now.  
 Instructions to install are down.
 To install emailHelpers:  
 First, download this repo. Then, navigate in your terminal/shell into the repo. Now, follow the following instructions.  
@@ -53,7 +53,7 @@ If you are a Linux/Ubuntu/Raspberry Pi user:
 	After installing python 3, type "sudo python3 setup.py install".  
 If you are a Windows user:  
 	Type in your terminal/shell "python3".  
-	IMPORTANT: When you run setup.py, you have to say "install" and "--user", or else there will be an error.  
+	IMPORTANT: When you run setup.py, you have to say "install" and "--user", or else there will be an error usually.  
 	If that works, type "python3 setup.py install --user".  
 	If typing in "python3" didn't work, try typing "python".  
 	If that doesn't work, install python 3. Look at this page for the files: https://www.python.org/downloads/windows/  
