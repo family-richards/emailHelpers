@@ -32,13 +32,7 @@ jobs:
         token: ${{ secrets.REL_PAT }}
       run: |
         python3 releasefind.py
+        cat requirements.txt
     - name: Build
       run: |
         python3 setup.py sdist bdist_wheel
-    - name: Push to master
-      run: |
-        git config --global user.name 'GitHub Actions'
-        git config --global user.email 'KTibow@users.noreply.github.com'
-        git add *
-        git commit -am "Automated" || true
-        git push origin HEAD:master || true
