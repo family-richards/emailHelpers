@@ -43,10 +43,12 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test building
       run: |
+        cd normal
         python3 setup.py sdist bdist_wheel
         pip install dist/*.whl
     - name: Test emailHelpers with coverage and pytest
       run: |
+        cd normal
         coverage run -m pytest test.py
         coverage report -m
         coverage annotate
@@ -55,8 +57,8 @@ jobs:
     - name: Push reports
       if: ${{ matrix.python-version }} == 3.8
       run: |
-        mv * ../coverage/
-        cd ../coverage/
+        mv normal/* coverage/
+        cd coverage/
         git rm * || true
         cp "emailHelpers/__init__.py,cover" "*emailHelpersCoverage.py"
         git add "emailHelpers/__init__.py,cover" || true
