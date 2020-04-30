@@ -57,7 +57,8 @@ jobs:
     - name: Push reports
       if: ${{ matrix.python-version }} == 3.8
       run: |
-        mv normal/* coverage/
+        rm -r coverage/*
+        mv normal/* coverage/ --force
         cd coverage/
         git rm * || true
         cp "emailHelpers/__init__.py,cover" "*emailHelpersCoverage.py"
