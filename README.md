@@ -1,6 +1,6 @@
 # emailHelpers
 ![Test lint and build](https://github.com/family-richards/Python-Email-Helpers/workflows/Test%20lint%20and%20build/badge.svg) ![Upload To PyPi](https://github.com/family-richards/Python-Email-Helpers/workflows/Upload%20To%20PyPi/badge.svg)  
-emailHelpers is a wrapper for the `smtplib` and `email` packages I coded in my spare time. Here's an example diff to the traditional way:
+emailHelpers is a wrapper for the `smtplib` and `email` packages. Here's an example diff to the traditional way:
 
 ```diff
 -  import smtplib
@@ -14,9 +14,9 @@ toaddr = "ADDRESS YOU WANT TO SEND TO"
 + email = Email(fromaddr)
 - email['From'] = fromaddr
 - email['To'] = toaddr
-+ email.setTo(toaddr)
++ email.set_to(toaddr)
 - email['Subject'] = "SUBJECT OF THE MAIL"
-+ email.setSubject("SUBJECT OF THE MAIL")
++ email.set_subject("SUBJECT OF THE MAIL")
  					
 body = "YOUR MESSAGE HERE"
 - email.attach(MIMEText(body, 'plain'))
@@ -27,9 +27,9 @@ body = "YOUR MESSAGE HERE"
 - mailer.login(fromaddr, "YOUR PASSWORD")
 text = email.as_string()
 - mailer.sendmail(fromaddr, toaddr, text)
-+ mailer.sendMail(text, toaddr)
++ mailer.send_mail(text, toaddr)
 - mailer.quit()
-+ mailer.quitSelf()
++ mailer.quit_self()
 ```
 As you can see, it reduces code size and complexity. It also has simple names, so you can easily code something new. Why emailHelpers? It's pretty well [documented](#emailhelpers-docs) too.  
 To install emailHelpers, use pip. On a platform that only has Python 3:
