@@ -14,6 +14,3 @@ setup[1] = 'version = "'+tag+'"'
 setupW = open("setup.py", "w")
 setupW.write("\n".join(setup))
 setupW.close()
-packagesW = open("requirements.txt", "w")
-packagesW.write(str(setuptools.find_packages()))
-packagesW.close()
