@@ -1,5 +1,5 @@
 """Two classes to help with emails in python,
-credit to: http://naelshiab.com/tutorial-send-email-python/
+credit to: http://web.archive.org/web/20190131064852/http://naelshiab.com/tutorial-send-email-python/
 https://stackoverflow.com/questions/5770951/python-how-can-i-change-the-to-field-in-smtp-mime-script-rather-than-adding-a
 https://stackoverflow.com/questions/4152963/get-the-name-of-current-script-with-python"""
 class Mailer():
