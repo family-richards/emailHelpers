@@ -13,7 +13,7 @@ toaddr = "ADDRESS YOU WANT TO SEND TO"
 - email = MIMEMultipart()
 + email = Email(fromaddr)
 - email['From'] = fromaddr
-email['To'] = toaddr
+- email['To'] = toaddr
 + email.setTo(toaddr)
 - email['Subject'] = "SUBJECT OF THE MAIL"
 + email.setSubject("SUBJECT OF THE MAIL")
