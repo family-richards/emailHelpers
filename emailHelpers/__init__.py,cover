@@ -42,11 +42,11 @@
   
 >     def addAttachment(self, attachment, filename):
 >         """Add any attachment. The filename for the email can be different than the local filename."""
-!         part = self.baseMime('application', 'octet-stream')
-!         part.set_payload((attachment).read())
-!         self.encoders.encode_base64(part)
-!         part.add_header('Content-Disposition', "attachment; filename= %s" % filename)
-!         self.MimeEmail.attach(part)
+>         part = self.baseMime('application', 'octet-stream')
+>         part.set_payload((attachment).read())
+>         self.encoders.encode_base64(part)
+>         part.add_header('Content-Disposition', "attachment; filename= %s" % filename)
+>         self.MimeEmail.attach(part)
   
 >     def setSubject(self, subject):
 >         """Set subject of email."""
@@ -58,12 +58,12 @@
   
 >     def _loadAttachment(self, filepath):
 >         """Load attatchment for adding."""
-!         return open(filepath, "rb")
+>         return open(filepath, "rb")
   
 >     def addAttachmentFromFile(self, filepath):
 >         """straight add from filename and path to load file"""
-!         from os.path import basename
-!         self.addAttachment(self._loadAttachment(filepath), basename(filepath))
+>         from os.path import basename
+>         self.addAttachment(self._loadAttachment(filepath), basename(filepath))
   
 >     def MimeBehind(self):
 >         """returns the hidden MIMEMultipart"""
@@ -71,7 +71,7 @@
   
 >     def as_string(self):
 >         """takes the hidden MIMEMultipart and returns it as string"""
-!         return self.MimeEmail.as_string()
+>         return self.MimeEmail.as_string()
   
 >     def setBody(self, body):
 >         """Adds body to email."""
@@ -90,7 +90,4 @@
   
 >     def addMyselfToEmail(self):
 >         """Finds this code on your computer and attatches this code to your email!"""
-!         myDirectoryPath = __file__
-!         from os.path import basename
-!         myOwnName = basename(myDirectoryPath)
-!         self.addAttachmentFromFile(myOwnName, myDirectoryPath)
+>         self.addAttachmentFromFile(__file__)

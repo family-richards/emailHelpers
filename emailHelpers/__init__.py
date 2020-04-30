@@ -90,7 +90,4 @@ class Email():
 
     def addMyselfToEmail(self):
         """Finds this code on your computer and attatches this code to your email!"""
-        myDirectoryPath = __file__
-        from os.path import basename
-        myOwnName = basename(myDirectoryPath)
-        self.addAttachmentFromFile(myOwnName, myDirectoryPath)
+        self.addAttachmentFromFile(__file__)
