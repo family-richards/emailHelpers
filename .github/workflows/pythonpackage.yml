@@ -13,6 +13,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        path: normal
+    - uses: actions/checkout@v2
+      with:
+        ref: coverage
+        path: coverage
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
       with:
@@ -30,6 +36,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with flake8
       run: |
+        cd normal
         # stop the build if there are Python syntax errors or undefined names
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
@@ -48,13 +55,12 @@ jobs:
     - name: Push reports
       if: ${{ matrix.python-version }} == 3.8
       run: |
+        mv * ../coverage/
+        cd ../coverage/
         git rm * || true
+        cp "emailHelpers/__init__.py,cover" "*emailHelpersCoverage.py"
         git add "emailHelpers/__init__.py,cover" || true
         git config --global user.name 'GitHub Actions'
         git config --global user.email 'KTibow@users.noreply.github.com'
-        git commit -am "Coverage" || true
-        git switch coverage
-        git rm * || true
-        git add "emailHelpers/__init__.py,cover" || true
         git commit -am "Coverage" || true
         git push origin HEAD:coverage || true
