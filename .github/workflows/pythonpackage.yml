@@ -41,7 +41,8 @@ jobs:
     - name: Test emailHelpers with coverage and pytest
       run: |
         coverage run -m pytest test.py
-        coverage report -m -d
+        coverage report -m
+        coverage annotate
     - name: Uninstall emailHelpers
       run: pip uninstall emailHelpers -y
     - name: Push reports
