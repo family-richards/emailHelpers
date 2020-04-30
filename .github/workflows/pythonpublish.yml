@@ -27,14 +27,16 @@ jobs:
         token: ${{ secrets.REL_PAT }}
       run: |
         python3 releasefind.py
-    - name: Make PR to add release
-      uses: peter-evans/create-pull-request@v2
-      with:
-        title: "Add latest version"
+    - name: Push to master
+      run: |
+        git config --global user.name 'GitHub Actions'
+        git config --global user.email 'KTibow@users.noreply.github.com'
+        git commit -am "Automated"
+        git push
     - name: Build and publish
       env:
         TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
         TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
       run: |
         python3 setup.py sdist bdist_wheel
- #       python3 -m twine upload --repository emailHelpers dist/*
+        python3 -m twine upload --repository emailHelpers dist/*
