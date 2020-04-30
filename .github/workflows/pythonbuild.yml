@@ -1,0 +1,43 @@
+name: Build
+
+on:
+  push:
+  release:
+    types: [created]
+
+jobs:
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v1
+      with:
+        python-version: '3.x'
+    - uses: actions/cache@v1
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+    - name: Install dependencies
+      run: |
+        python3 -m pip install --upgrade pip
+        pip install wheel
+        pip install setuptools twine pygithub
+    - name: Find latest release
+      env:
+        token: ${{ secrets.REL_PAT }}
+      run: |
+        python3 releasefind.py
+    - name: Build
+      run: |
+        python3 setup.py sdist bdist_wheel
+    - name: Push to master
+      run: |
+        git config --global user.name 'GitHub Actions'
+        git config --global user.email 'KTibow@users.noreply.github.com'
+        git commit -am "Automated" || true
+        git push origin HEAD:master || true
