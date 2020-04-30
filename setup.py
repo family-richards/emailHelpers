@@ -2,6 +2,8 @@ import setuptools
 version = "v0.2.0"
 with open("PYPI.md", "r") as fh:
     long_description = fh.read()
+with open("requirements.txt", "w") as fh:
+    fh.write("\n".join(setuptools.find_packages()))
 setuptools.setup(name="emailHelpers",
       version=version,
       author="Kendell R.",
