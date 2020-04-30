@@ -66,4 +66,5 @@ jobs:
         git config --global user.name 'GitHub Actions'
         git config --global user.email 'KTibow@users.noreply.github.com'
         git commit -am "Coverage" || true
+        git pull
         git push origin HEAD:coverage || true
