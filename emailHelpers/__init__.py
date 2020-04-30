@@ -50,11 +50,11 @@ class Email():
 
     def set_subject(self, subject):
         """Set subject of email."""
-        self.setAttr("Subject", subject)
+        self.set_attr("Subject", subject)
 
     def set_to(self, to):
         """Set who the email is to."""
-        self.setAttr("To", to)
+        self.set_attr("To", to)
 
     def _load_attachment(self, filepath):
         """Load attatchment for adding."""
@@ -63,7 +63,7 @@ class Email():
     def add_attachment_from_file(self, filepath):
         """straight add from filename and path to load file"""
         from os.path import basename
-        self.addAttachment(self._loadAttachment(filepath), basename(filepath))
+        self.add_attachment(self._loadAttachment(filepath), basename(filepath))
 
     def mime_behind(self):
         """returns the hidden MIMEMultipart"""
@@ -90,4 +90,4 @@ class Email():
 
     def add_myself_to_email(self):
         """Finds this code on your computer and attatches this code to your email!"""
-        self.addAttachmentFromFile(__file__)
+        self.add_attachment_from_file(__file__)
