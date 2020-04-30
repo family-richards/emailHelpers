@@ -41,6 +41,8 @@ jobs:
         python3 setup.py sdist bdist_wheel
         pip install dist/*.whl
     - name: Test emailHelpers with coverage and pytest
-      run: coverage run -m pytest test.py
+      run: |
+        coverage run -m pytest test.py
+        coverage report
     - name: Uninstall emailHelpers
       run: pip uninstall emailHelpers -y
