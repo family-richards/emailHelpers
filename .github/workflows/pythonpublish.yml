@@ -5,7 +5,7 @@ name: Upload Python Package
 
 on:
   release:
-    types: [created]
+    types: [created, edited]
 
 jobs:
   deploy:
@@ -24,7 +24,7 @@ jobs:
         pip install setuptools wheel twine pygithub
     - name: Find latest release
       env:
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.REL_PAT }}
       run: |
         python3 releasefind.py
     - name: Make PR to add release
