@@ -29,7 +29,6 @@ text = email.as_string()
 - mailer.sendmail(fromaddr, toaddr, text)
 + mailer.send_mail(text, toaddr)
 - mailer.quit()
-+ mailer.quit_self()
 ```
 As you can see, it reduces code size and complexity. It also has simple names, so you can easily code something new. Why emailHelpers? It's pretty well [documented](#emailhelpers-docs) too.  
 To install emailHelpers, use pip. On a platform that only has Python 3:
