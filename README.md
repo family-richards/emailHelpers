@@ -1,12 +1,11 @@
-emailHelpers is a wrapper for the `smtplib` and `email` packages I coded in my spare time. Here's an example:
+emailHelpers is a wrapper for the `smtplib` and `email` packages I coded in my spare time. Here's an example diff:
 
-Regular is on the left.	With emailHelpers is on the right.
 ```diff
 -  import smtplib
 -  from email.MIMEMultipart import MIMEMultipart
 -  from email.MIMEText import MIMEText
 +  from emailHelpers import Mailer, Email
-~  fromaddr = "YOUR ADDRESS"
+fromaddr = "YOUR ADDRESS"
 toaddr = "ADDRESS YOU WANT TO SEND TO"
 
 - email = MIMEMultipart()
@@ -30,9 +29,7 @@ text = email.as_string()
 - mailer.quit()
 + mailer.quitSelf()
 ```
-
-emailHelpers 
-I'd go for the 1-line option myself. I don't think everybody knows what tls and smtp is, and asking the computer to login sounds kind of creepy. (Sorry if your feelings are hurt, naelshiab and everybody who worked on the libraries that I used. Yes, I do use the original libraries.)  
+As you can see, it reduces code size and complexity. It also has simple names, so you can easily code something new.
   
 That's a couple of reasons to use emailHelpers. Complete with docstrings and (mostly) self-explanatory function names, get started now.  
 Instructions to install are down.
