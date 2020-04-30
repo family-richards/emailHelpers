@@ -70,6 +70,11 @@ To attach a file:
 ```python3
 email.addAttachmentFromFile("intruder.png")
 ```
+#### Adding `emailHelpers` to your `Email`
+Finally, just for the fun of it, you can call `addMyselfToEmail` to add the library as an attachment to your `Email` object. It's used like this:
+```python3
+email.addMyselfToEmail()
+```
 ## Internals... probably not needed by you
 If you want to attatch a file from a variable, use `addAttachment`. It takes the attachment and the filename to call it.  
 Use it like this:
@@ -81,20 +86,17 @@ Use it like this:
 ```python3
 file = email.loadAttachment(["complex.stuff"])
 ```
-The simpler function, if you don't want to disguise your filename, is addAttachmentFromFile. It was covered [earlier](#attatching-files-for-email).
-To get the MIMEMultipart behind the object, use MimeBehind.
+The simpler function, if you don't want to disguise your filename, is addAttachmentFromFile. It was covered [earlier](#attaching-files-for-email).
+To get the `MIMEMultipart` behind the object, use `MimeBehind`.
 Use it like this:
 ```python3
 multipart = email.MimeBehind()
 ```
-To access properties of the MIMEMultipart, use getAttr and setAttr.
+To access properties of the `MIMEMultipart`, use `getAttr` and `setAttr`.
 They are used like this:
 ```python3
 attribute = email.getAttr("attribute to get")
 email.getAttr("attribute to set","new value of attribute")
 ```
-Finally, you can call addMyselfToEmail to add the library to your
-Email object. It is used like this:
-[name of email object].addMyselfToEmail()
 You're dedicated to read all of this, you know. Good job! I hope that this library makes managing emails easier.
-See you later! If you have any questions or bugs, feel free to make an issue. Bye!
+See you later! If you have any questions or bugs, feel free to make an issue. Enjoy!
