@@ -18,7 +18,7 @@
 !         self.server.login(emailFrom, emailPassword)
 !         self.server.quit()
   
->     def sendMail(self, emailString, people):
+>     def send_mail(self, emailString, people):
 >         """Sends a mail. The emailString is from an Email's to_string() function. People is a list of items."""
 !         self.server = self.smtplib.SMTP_SSL(self.emailServer, self.emailServerPort)
 !         self.server.ehlo()
@@ -40,7 +40,7 @@
 >         self.textMime = MIMEText
 >         self.MimeEmail['From'] = emailFrom
   
->     def addAttachment(self, attachment, filename):
+>     def add_attachment(self, attachment, filename):
 >         """Add any attachment. The filename for the email can be different than the local filename."""
 >         part = self.baseMime('application', 'octet-stream')
 >         part.set_payload((attachment).read())
@@ -48,24 +48,24 @@
 >         part.add_header('Content-Disposition', "attachment; filename= %s" % filename)
 >         self.MimeEmail.attach(part)
   
->     def setSubject(self, subject):
+>     def set_subject(self, subject):
 >         """Set subject of email."""
->         self.setAttr("Subject", subject)
+>         self.set_attr("Subject", subject)
   
->     def setTo(self, to):
+>     def set_to(self, to):
 >         """Set who the email is to."""
->         self.setAttr("To", to)
+>         self.set_attr("To", to)
   
->     def _loadAttachment(self, filepath):
+>     def _load_attachment(self, filepath):
 >         """Load attatchment for adding."""
 >         return open(filepath, "rb")
   
->     def addAttachmentFromFile(self, filepath):
+>     def add_attachment_from_file(self, filepath):
 >         """straight add from filename and path to load file"""
 >         from os.path import basename
->         self.addAttachment(self._loadAttachment(filepath), basename(filepath))
+>         self.add_attachment(self._load_attachment(filepath), basename(filepath))
   
->     def MimeBehind(self):
+>     def mime_behind(self):
 >         """returns the hidden MIMEMultipart"""
 !         return self.MimeEmail
   
@@ -73,21 +73,21 @@
 >         """takes the hidden MIMEMultipart and returns it as string"""
 >         return self.MimeEmail.as_string()
   
->     def setBody(self, body):
+>     def set_body(self, body):
 >         """Adds body to email."""
 !         self.MimeEmail.attach(self.textMime(body, 'plain'))
   
->     def getAttr(self, attribute):
+>     def get_attr(self, attribute):
 >         """gets any attribute from the MIMEMultipart"""
 !         return self.MimeEmail[attribute]
   
->     def setAttr(self, attribute, value):
+>     def set_attr(self, attribute, value):
 >         """sets any attribute from the MIMEMultipart"""
 >         if attribute in self.MimeEmail:
 !             self.MimeEmail.replace_header(attribute, value)
 >         else:
 >             self.MimeEmail[attribute] = value
   
->     def addMyselfToEmail(self):
+>     def add_myself_to_email(self):
 >         """Finds this code on your computer and attatches this code to your email!"""
->         self.addAttachmentFromFile(__file__)
+>         self.add_attachment_from_file(__file__)

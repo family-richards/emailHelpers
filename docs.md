@@ -25,7 +25,7 @@ mailer = Mailer("freds-work@gmail.com", "fred-work=nothing")
 #### Sending Email from `Mailer`
 To send a mail from a `Mailer`, do this:  
 ```python3
-mailer.sendMail(emailstr, ["freds-friend@anything.com"])
+mailer.send_mail(emailstr, ["freds-friend@anything.com"])
 ```
 That's the Mailer object. Now on to the slightly more complex `Email`.
 ## The `Email` Class
@@ -37,24 +37,24 @@ email = Email("fred_loves_pickles@vinegar.helps")
 #### Subject for `Email`
 To add a subject, run this:  
 ```python3
-email.setSubject([subject])
+email.set_subject([subject])
 ```
 #### Metadata To field for `Email`
 Now, before I say this, I need to explain some things. Do you know how BCC works? It sends it to that person, but the email doesn't say that. To change the part of the email that says who was supposed to recieve it, use this:  
 ```python3
-email.setTo(["soiwassupposed@torecieve.it"])
+email.set_to(["soiwassupposed@torecieve.it"])
 ```
 #### Body for `Email`
 To add your body, run:  
 ```python3
-email.setBody([body])
+email.set_body([body])
 ```
 I recommend using `"""` to have newlines. Example:  
 ```python3
 body = """This is the email body.
 This is the second line.
 Sincerely, your python script"""
-email.setBody([body])
+email.set_body([body])
 ```
 #### `as_string()` for `Email`
 When you want to send your email object, you should run:  
@@ -63,41 +63,41 @@ email.as_string()
 ```
 So you would run:  
 ```python3
-mailer.sendMail(email.as_string(), ["person@example.com", "anybody@anywhere.com"])
+mailer.send_mail(email.as_string(), ["person@example.com", "anybody@anywhere.com"])
 ```
 to send your email.
 #### Attaching Files for `Email`
 To attach a file:  
 ```python3
-email.addAttachmentFromFile("intruder.png")
+email.add_attachment_from_file("intruder.png")
 ```
 #### Adding `emailHelpers` to your `Email`
 Finally, just for the fun of it, you can call `addMyselfToEmail` to add the library as an attachment to your `Email` object. It's used like this:  
 ```python3
-email.addMyselfToEmail()
+email.add_myself_to_mail()
 ```
 ## Internals... probably not needed by you
 If you want to attatch a file from a variable, use `addAttachment`. It takes the attachment and the filename to call it.  
 Use it like this:  
 ```python3
-email.addAttachment(loadedattachment, "filename")
+email.add_attachment(loadedattachment, "filename")
 ```
 To load a file, use `loadAttachment`. It will return a file that can be passed to `addAttachment`.
 Use it like this:  
 ```python3
-file = email.loadAttachment(["complex.stuff"])
+file = email.load_attachment(["complex.stuff"])
 ```
 The simpler function, if you don't want to disguise your filename, is addAttachmentFromFile. It was covered [earlier](#attaching-files-for-email).
 To get the `MIMEMultipart` behind the object, use `MimeBehind`.
 Use it like this:  
 ```python3
-multipart = email.MimeBehind()
+multipart = email.mime_behind()
 ```
 To access properties of the `MIMEMultipart`, use `getAttr` and `setAttr`.
 They are used like this:  
 ```python3
-attribute = email.getAttr("attribute to get")
-email.getAttr("attribute to set","new value of attribute")
+attribute = email.get_attr("attribute to get")
+email.set_attr("attribute to set","new value of attribute")
 ```
 You're dedicated to read all of this, you know. Good job! I hope that this library makes managing emails easier.
 See you later! If you have any questions or bugs, feel free to make an issue. Enjoy!
