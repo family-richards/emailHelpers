@@ -23,6 +23,8 @@ jobs:
         python3 -m pip install --upgrade pip
         pip install setuptools wheel twine pygithub
     - name: Find latest release
+      env:
+        token: ${{ secrets.GITHUB_TOKEN }}
       run: |
         python3 releasefind.py
     - name: Make PR to add release
