@@ -12,7 +12,6 @@ setuptools.setup(name="emailHelpers",
         description="emailHelpers is a wrapper for the smtplib and email packages.",
         long_description=long_description,
         long_description_content_type="text/markdown",
-        download_url="https://github.com/family-richards/Python-Email-Helpers",
-        url="https://github.com/family-richards/Python-Email-Helpers",
+        url="https://family-richards.github.io/emailHelpers/",
         packages=setuptools.find_packages(),
         python_requires='>=3.0')
