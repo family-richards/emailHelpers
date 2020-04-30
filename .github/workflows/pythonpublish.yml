@@ -32,7 +32,7 @@ jobs:
         git config --global user.name 'GitHub Actions'
         git config --global user.email 'KTibow@users.noreply.github.com'
         git commit -am "Automated"
-        git push
+        git git push origin HEAD:master
     - name: Build and publish
       env:
         TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
