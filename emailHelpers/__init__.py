@@ -39,7 +39,7 @@ class Email():
     def addAttachment(self, attachment, filename):
         """Add any attachment. The filename for the email can be different than the local filename."""
         part = self.baseMime('application', 'octet-stream')
-        part.set_payload((attatchment).read())
+        part.set_payload((attachment).read())
         self.encoders.encode_base64(part)
         part.add_header('Content-Disposition', "attachment; filename= %s" % filename)
         self.MimeEmail.attach(part)
