@@ -31,8 +31,7 @@ text = email.as_string()
 ```
 As you can see, it reduces code size and complexity. It also has simple names, so you can easily code something new.
   
-That's a couple of reasons to use emailHelpers. Complete with docstrings and (mostly) self-explanatory function names, get started now.  
-Instructions to install are down.
+That's a couple of reasons to use emailHelpers. Complete with docstrings and (mostly) self-explanatory function names, get started now.
 To install emailHelpers:  
 First, download this repo. Then, navigate in your terminal/shell into the repo. Now, follow the following instructions.  
 If you are a Linux/Ubuntu/Raspberry Pi user:  
