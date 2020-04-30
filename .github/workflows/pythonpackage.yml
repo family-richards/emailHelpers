@@ -42,4 +42,4 @@ jobs:
     - name: Test building
       run: |
         python3 setup.py sdist bdist_wheel
-        ls dist
+        pip install dist/*.whl
