@@ -1,4 +1,4 @@
-def test_import():
-  from emailHelpers import Mailer, Email
-  assert "Mailer" in globals()
-  assert "Email" in globals()
+from os import getenv
+def test_make_email():
+  from emailHelpers import Email
+  email = Email("kidscodingplace@gmail.com")
