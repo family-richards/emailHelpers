@@ -1,6 +1,7 @@
 from github import Github
 from os import getenv
 from time import sleep
+import setuptools
 g = Github(getenv("token"))
 print("Waiting for GitHub")
 sleep(10)
@@ -13,3 +14,6 @@ setup[1] = 'version = "'+tag+'"'
 setupW = open("setup.py", "w")
 setupW.write("\n".join(setup))
 setupW.close()
+packagesW = open("requirements.txt", "w")
+packagesW.write(str(setuptools.find_packages()))
+packagesW.close()
