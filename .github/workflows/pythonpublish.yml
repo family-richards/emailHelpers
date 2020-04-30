@@ -1,11 +1,8 @@
-# This workflows will upload a Python Package using Twine when a release is created
-# For more information see: https://help.github.com/en/actions/language-and-framework-guides/using-python-with-github-actions#publishing-to-package-registries
-
-name: Upload Python Package
+name: Upload To PyPi
 
 on:
   release:
-    types: [created, edited]
+    types: [created]
 
 jobs:
   deploy:
@@ -18,10 +15,17 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: '3.x'
+    - uses: actions/cache@v1
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
     - name: Install dependencies
       run: |
         python3 -m pip install --upgrade pip
-        pip install setuptools wheel twine pygithub
+        pip install wheel
+        pip install setuptools twine pygithub
     - name: Find latest release
       env:
         token: ${{ secrets.REL_PAT }}
