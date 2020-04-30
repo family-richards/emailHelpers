@@ -1,39 +1,37 @@
-This is a python 3 package meant to make managing emails easier.
-It will probably help to add readability and reduce lines. Here's an example of how much it reduces lines:
+emailHelpers is a wrapper for the `smtplib` and `email` packages I coded in my spare time. Here's an example:
 
 Regular is on the left.	With emailHelpers is on the right.
-```python3
-import smtplib					from emailHelpers import *
-from email.MIMEMultipart import MIMEMultipart	(Reduction)
-from email.MIMEText import MIMEText		(Reduction)
-fromaddr = "YOUR ADDRESS"			fromaddr = "YOUR ADDRESS"
-toaddr = "ADDRESS YOU WANT TO SEND TO"		toaddr = "ADDRESS YOU WANT TO SEND TO"
-msg = MIMEMultipart()				email = Email(fromaddr)
-msg['From'] = fromaddr				(Reduction)
-msg['To'] = toaddr				email.setTo(toaddr)
-msg['Subject'] = "SUBJECT OF THE MAIL"		email.setSubject("SUBJECT OF THE MAIL")
- 						
-body = "YOUR MESSAGE HERE"			body = "YOUR MESSAGE HERE"
-msg.attach(MIMEText(body, 'plain'))		(Reduction)
- 						
-server = smtplib.SMTP('smtp.gmail.com', 587)	mailer = Mailer(fromaddr, "YOUR PASSWORD")
-server.starttls()				(Reduction)
-server.login(fromaddr, "YOUR PASSWORD")		(Reduction)
-text = msg.as_string()				text = email.as_string()
-server.sendmail(fromaddr, toaddr, text)		mailer.sendMail(text,toaddr)
-server.quit()					mailer.quitSelf()
+```diff
+-  import smtplib
+-  from email.MIMEMultipart import MIMEMultipart
+-  from email.MIMEText import MIMEText
++  from emailHelpers import Mailer, Email
+~  fromaddr = "YOUR ADDRESS"
+toaddr = "ADDRESS YOU WANT TO SEND TO"
+
+- email = MIMEMultipart()
++ email = Email(fromaddr)
+- email['From'] = fromaddr
+email['To'] = toaddr
++ email.setTo(toaddr)
+- email['Subject'] = "SUBJECT OF THE MAIL"
++ email.setSubject("SUBJECT OF THE MAIL")
+ 					
+body = "YOUR MESSAGE HERE"
+- email.attach(MIMEText(body, 'plain'))
+ 				
+- mailer = smtplib.SMTP('smtp.gmail.com', 587)
++ mailer = Mailer(fromaddr, "YOUR PASSWORD")
+- mailer.starttls()
+- mailer.login(fromaddr, "YOUR PASSWORD")
+text = email.as_string()
+- mailer.sendmail(fromaddr, toaddr, text)
++ mailer.sendMail(text, toaddr)
+- mailer.quit()
++ mailer.quitSelf()
 ```
 
-Look! We reduced the number of lines by 6 lines! Also, which makes more sense to someone who's learning Python:
-```python3
-server = smtplib.SMTP('smtp.gmail.com', 587)
-server.starttls()
-server.login(fromaddr, "YOUR PASSWORD")
-```
-or
-```python3
-mailer = Mailer(fromaddr, "YOUR PASSWORD")
-```
+emailHelpers 
 I'd go for the 1-line option myself. I don't think everybody knows what tls and smtp is, and asking the computer to login sounds kind of creepy. (Sorry if your feelings are hurt, naelshiab and everybody who worked on the libraries that I used. Yes, I do use the original libraries.)  
   
 That's a couple of reasons to use emailHelpers. Complete with docstrings and (mostly) self-explanatory function names, get started now.  
