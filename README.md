@@ -31,7 +31,7 @@ text = email.as_string()
 - mailer.quit()
 + mailer.quitSelf()
 ```
-As you can see, it reduces code size and complexity. It also has simple names, so you can easily code something new. Why emailHelpers? It's pretty well [documented](#docs) too.  
+As you can see, it reduces code size and complexity. It also has simple names, so you can easily code something new. Why emailHelpers? It's pretty well [documented](#emailhelpers-docs) too.  
 To install emailHelpers, use pip. On a platform that only has Python 3:
 ```bash
 python -m pip install emailHelpers
@@ -40,7 +40,7 @@ On a platform with Python 2 and Python 3:
 ```bash
 python3 -m pip install emailHelpers
 ```
-[Get started coding with emailHelpers now!](docs.md)
+Get started coding with emailHelpers now with these docs:
 ## emailHelpers Docs
 emailHelpers is a combination of 2 classes to make the sending and managing of emails in python easier.
 It's made of two classes: Mailer and Email.
