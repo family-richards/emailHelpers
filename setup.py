@@ -20,7 +20,7 @@ else:
     from distutils.core import setup
     from pkgutil import walk_packages
     import emailHelpers
-    def find_pcks(path=__path__, prefix=""):
+    def find_pcks(path, prefix):
         yield prefix
         prefix = prefix + "."
         for _, name, ispkg in walk_packages(path, prefix):
