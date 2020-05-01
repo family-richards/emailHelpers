@@ -5,7 +5,8 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  test:
+    name: "Test package"
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -65,7 +66,18 @@ jobs:
         cp "emailHelpers/__init__.py,cover" "*emailHelpersCoverage.py"
         git add "*emailHelpersCoverage.py" || true
         git config --global user.name 'GitHub Actions'
-        git config --global user.email 'KTibow@users.noreply.github.com'
+        git config --global user.email 'runner@users.noreply.github.com'
         git commit -am "Coverage" || true
         git pull
         git push origin HEAD:coverage || true
+  pre-release:
+    name: "Pre Release"
+    runs-on: "ubuntu-latest"
+    needs: test
+    steps:
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build"
