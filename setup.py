@@ -1,5 +1,5 @@
 import setuptools
-version = "v0.3.0"
+version = "v1.0.0"
 with open("PYPI.md", "r") as fh:
     long_description = fh.read()
 with open("requirements.txt", "w") as fh:
