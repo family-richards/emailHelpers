@@ -11,40 +11,33 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-      if: github.actor == "KTibow" || github.actor == "ejrejr"
     - name: Set up Python
       uses: actions/setup-python@v1
-      if: github.actor == "KTibow" || github.actor == "ejrejr"
       with:
         python-version: '3.x'
     - uses: actions/cache@v1
-      if: github.actor == "KTibow" || github.actor == "ejrejr"
       with:
         path: ~/.cache/pip
         key: pip-packs
         restore-keys: |
           pip-packs
     - name: Install dependencies
-      if: github.actor == "KTibow" || github.actor == "ejrejr"
       run: |
         python3 -m pip install --upgrade pip
         pip install wheel
         pip install setuptools twine pygithub
     - name: Find latest release
-      if: github.actor == "KTibow" || github.actor == "ejrejr"
       env:
         token: ${{ secrets.REL_PAT }}
       run: |
         python3 releasefind.py
     - name: Push to master
-      if: github.actor == "KTibow" || github.actor == "ejrejr"
       run: |
         git config --global user.name 'GitHub Actions'
         git config --global user.email 'KTibow@users.noreply.github.com'
         git commit -am "Automated" || true
         git push origin HEAD:master || true
     - name: Build and publish
-      if: github.actor == "KTibow" || github.actor == "ejrejr"
       env:
         TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
         TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
