@@ -57,7 +57,7 @@ jobs:
     - name: Uninstall emailHelpers
       run: pip uninstall emailHelpers -y
     - name: Push reports
-      if: matrix.python-version == 3.8
+      if: matrix.python-version == 3.8.0
       run: |
         rm -r coverage/*
         mv normal/* coverage/ --force
@@ -78,6 +78,6 @@ jobs:
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "*latest"
+          automatic_release_tag: "zlatest"
           prerelease: true
           title: "Development Build"
