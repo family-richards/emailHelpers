@@ -15,7 +15,7 @@ if sys.version_info.major == 3:
                      url="https://family-richards.github.io/emailHelpers/",
                      packages=find_packages(),
                      classifiers=["Topic :: Communications :: Email", "Natural Language :: English", "Operating System :: OS Independent"],
-                     python_requires='>=3.0')
+                     python_requires='>=2.5')
 else:
     from distutils.core import setup
     from pkgutil import walk_packages
