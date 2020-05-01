@@ -12,5 +12,5 @@ setuptools.setup(name="emailHelpers",
                  long_description_content_type="text/markdown",
                  url="https://family-richards.github.io/emailHelpers/",
                  packages=setuptools.find_packages(),
-                 classifiers=["Topic :: Communications :: Email"],
+                 classifiers=["Topic :: Communications :: Email", "Natural Language :: English"],
                  python_requires='>=3.0')
