@@ -55,7 +55,7 @@ jobs:
     - name: Uninstall emailHelpers
       run: pip uninstall emailHelpers -y
     - name: Push reports
-      if: ${{ matrix.python-version }} == 3.8
+      if: matrix.python-version == 3.8
       run: |
         rm -r coverage/*
         mv normal/* coverage/ --force
