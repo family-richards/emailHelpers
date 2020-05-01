@@ -1,8 +1,8 @@
-import setuptools
-version = "v1.0.0"
+from setuptools import find_packages, setup
+version = "1.0.1"
 with open("PYPI.md", "r") as fh:
     long_description = fh.read()
-setuptools.setup(name="emailHelpers",
+setup(name="emailHelpers",
                  version=version,
                  author="Kendell R.",
                  author_email="kidscodingplace@gmail.com",
@@ -11,6 +11,6 @@ setuptools.setup(name="emailHelpers",
                  long_description=long_description,
                  long_description_content_type="text/markdown",
                  url="https://family-richards.github.io/emailHelpers/",
-                 packages=setuptools.find_packages(),
-                 classifiers=["Topic :: Communications :: Email", "Natural Language :: English", "Operating System :: OS Independent"],
+                 packages=find_packages(),
+                 classifiers=["Topic :: Communications :: Email", "Natural Language :: English", "Operating System :: OS Independent", "Programming Language :: Python :: 3 :: Only", "Topic :: Software Development :: Libraries :: Python Modules"],
                  python_requires='>=3.0')
