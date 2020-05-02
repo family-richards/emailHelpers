@@ -1,5 +1,5 @@
-![Test lint and build](https://github.com/family-richards/Python-Email-Helpers/workflows/Test%20lint%20and%20build/badge.svg) ![Upload To PyPi](https://github.com/family-richards/Python-Email-Helpers/workflows/Upload%20To%20PyPi/badge.svg)  
-![emailHelpers logoimage](pyart-helpers.png)  
+![Test lint and build](https://github.com/family-richards/emailHelpers/workflows/Test%20lint%20and%20build/badge.svg) ![Upload To PyPi](https://github.com/family-richards/emailHelpers/workflows/Upload%20To%20PyPi/badge.svg)  
+![emailHelpers logoimage](https://raw.githubusercontent.com/family-richards/emailHelpers/master/pyart-helpers.png)  
 emailHelpers is a wrapper for the smtplib and email packages. Here's an example for how to send a Gmail message:
 ```python3
 from emailHelpers import Mailer, Email
