@@ -1,5 +1,6 @@
 # emailHelpers
 ![Test lint and build](https://github.com/family-richards/Python-Email-Helpers/workflows/Test%20lint%20and%20build/badge.svg) ![Upload To PyPi](https://github.com/family-richards/Python-Email-Helpers/workflows/Upload%20To%20PyPi/badge.svg)  
+![emailHelpers logoimage](pyart-helpers.png)  
 emailHelpers is a wrapper for the `smtplib` and `email` packages. Here's an example diff to the traditional way:
 
 ```diff
