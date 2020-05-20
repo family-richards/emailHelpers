@@ -76,7 +76,7 @@
   
 >     def set_body(self, body):
 >         """Adds body to email."""
-!         self.MimeEmail.attach(self.textMime(body, 'plain'))
+>         self.MimeEmail.attach(self.textMime(body, 'plain'))
   
 >     def get_attr(self, attribute):
 >         """gets any attribute from the MIMEMultipart"""
