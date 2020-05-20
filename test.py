@@ -24,11 +24,9 @@ def advanced_email():
   # Test override
   email.set_to("boopy@example.com")
   # Test mime_behind
-  assert email.mime_behind() == email.MimeEmail
+  mimeBehind = email.mime_behind()
   # Test get_attr
-  assert email.mime_behind()["From"] == email.get_attr("From")
-  # Test from
-  assert email.mime_behind()["From"] == "boopy@example.com"
+  fromPerson = email.get_attr("From")
 
 def test_add_attatchment():
   # Declare email
