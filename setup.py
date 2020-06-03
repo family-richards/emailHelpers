@@ -12,5 +12,5 @@ setup(name="emailHelpers",
                  long_description_content_type="text/markdown",
                  url="https://family-richards.github.io/emailHelpers/",
                  packages=find_packages(),
-                 classifiers=["Topic :: Communications :: Email", "Natural Language :: English", "Operating System :: OS Independent", "Programming Language :: Python :: 3 :: Only", "Topic :: Software Development :: Libraries :: Python Modules", "Development Status :: 5 - Production/Stable"],
+                 classifiers=["Topic :: Communications :: Email", "Natural Language :: English", "Operating System :: OS Independent", "Programming Language :: Python :: 3 :: Only", "Topic :: Software Development :: Libraries :: Python Modules", "Development Status :: 5 - Production/Stable", "License :: OSI Approved :: MIT License"],
                  python_requires='>=3.0')
