@@ -1,5 +1,5 @@
 from setuptools import find_packages, setup
-version = "1.0.3"
+version = "1.0.4"
 with open("PYPI.md", "r") as fh:
     long_description = fh.read()
 setup(name="emailHelpers",
@@ -12,5 +12,5 @@ setup(name="emailHelpers",
                  long_description_content_type="text/markdown",
                  url="https://family-richards.github.io/emailHelpers/",
                  packages=find_packages(),
-                 classifiers=["Topic :: Communications :: Email", "Natural Language :: English", "Operating System :: OS Independent", "Programming Language :: Python :: 3 :: Only", "Topic :: Software Development :: Libraries :: Python Modules"],
+                 classifiers=["Topic :: Communications :: Email", "Natural Language :: English", "Operating System :: OS Independent", "Programming Language :: Python :: 3 :: Only", "Topic :: Software Development :: Libraries :: Python Modules", "Development Status :: 5 - Production/Stable"],
                  python_requires='>=3.0')
