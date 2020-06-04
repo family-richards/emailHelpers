@@ -36,7 +36,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        if [ -f testrequirements.txt ]; then pip install -r testrequirements.txt; fi
+        if [ -f normal/testrequirements.txt ]; then pip install -r normal/testrequirements.txt; fi
     - name: Lint with flake8
       run: |
         cd normal
