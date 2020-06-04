@@ -48,14 +48,6 @@ jobs:
         python3 setup.py sdist bdist_wheel
         ls dist
         pip install dist/*.whl
-    - name: VirusTotal Scan
-      uses: crazy-max/ghaction-virustotal@v2
-      with:
-        vt_api_key: ${{ secrets.VT_API_KEY }}
-        files: |
-          ~/normal/dist/*.whl
-          ~/normal/*.py
-          ~/normal/emailHelpers/*.py
     - name: Test emailHelpers with coverage and pytest
       run: |
         cd normal
@@ -78,6 +70,21 @@ jobs:
         git commit -am "Coverage" || true
         git pull
         git push origin HEAD:coverage || true
+  vt-scan:
+    name: "VirusTotal Scan"
+    runs-on: "ubuntu-latest"
+    needs: test
+    steps:
+      - uses: actions/checkout@v2
+        name: Checkout
+      - name: VirusTotal Scan
+        uses: crazy-max/ghaction-virustotal@v2
+        with:
+          vt_api_key: ${{ secrets.VT_API_KEY }}
+          files: |
+            dist/*.whl
+            *.py
+            emailHelpers/*.py
   pre-release:
     name: "Pre Release"
     runs-on: "ubuntu-latest"
