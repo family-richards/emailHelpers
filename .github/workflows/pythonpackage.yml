@@ -48,6 +48,14 @@ jobs:
         python3 setup.py sdist bdist_wheel
         ls dist
         pip install dist/*.whl
+    - name: VirusTotal Scan
+      uses: crazy-max/ghaction-virustotal@v2
+      with:
+        vt_api_key: ${{ secrets.VT_API_KEY }}
+        files: |
+          ~/normal/dist/*.whl
+          ~/normal/*.py
+          ~/normal/emailHelpers/*.py
     - name: Test emailHelpers with coverage and pytest
       run: |
         cd normal
