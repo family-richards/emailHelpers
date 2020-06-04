@@ -2,9 +2,9 @@ name: VirusTotal Check
 
 on:
   schedule:
-    cron: '0 */6 * * *'
+    - cron: '0 */6 * * *'
   release:
-    types: [created]
+    - types: [created]
 
 jobs:
   deploy:
