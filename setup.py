@@ -1,5 +1,5 @@
 from setuptools import find_packages, setup
-version = "1.1.0"
+version = "zlatest"
 with open("PYPI.md", "r") as fh:
     long_description = fh.read()
 setup(name="emailHelpers",
