@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: '0 */6 * * *'
   release:
-    - types: [created]
+    types: [created]
 
 jobs:
   deploy:
