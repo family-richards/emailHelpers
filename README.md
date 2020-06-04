@@ -1,37 +1,45 @@
 # emailHelpers
 ![Test lint and build](https://github.com/family-richards/Python-Email-Helpers/workflows/Test%20lint%20and%20build/badge.svg) ![Upload To PyPi](https://github.com/family-richards/Python-Email-Helpers/workflows/Upload%20To%20PyPi/badge.svg)  
 ![emailHelpers logoimage](pyart-helpers.png)  
-emailHelpers is a wrapper for the `smtplib` and `email` packages. Here's an example diff to the traditional way:
+emailHelpers is a wrapper for the `smtplib` and `email` packages so it's easy to send emails in your projects. Here's an example of how to send a `Gmail` message:
+```python3
+from emailHelpers import Mailer, Email
+fromaddr = "example@example.com"
+toaddr = "person@example.com"
 
-```diff
--  import smtplib
--  from email.MIMEMultipart import MIMEMultipart
--  from email.MIMEText import MIMEText
-+  from emailHelpers import Mailer, Email
+email = Email(fromaddr)
+email.set_to(toaddr)
+email.set_subject("Example.")
+email.set_body("It's an example!")
+
+mailer = Mailer(fromaddr, "YOUR PASSWORD")
+text = email.as_string()
+mailer.send_mail(text, toaddr)
+```
+It's a lot less complicated compared to the normal way:
+```python3
+import smtplib
+from email.MIMEMultipart import MIMEMultipart
+from email.MIMEText import MIMEText
 fromaddr = "YOUR ADDRESS"
 toaddr = "ADDRESS YOU WANT TO SEND TO"
 
-- email = MIMEMultipart()
-+ email = Email(fromaddr)
-- email['From'] = fromaddr
-- email['To'] = toaddr
-+ email.set_to(toaddr)
-- email['Subject'] = "SUBJECT OF THE MAIL"
-+ email.set_subject("SUBJECT OF THE MAIL")
+email = MIMEMultipart()
+email['From'] = fromaddr
+email['To'] = toaddr
+email['Subject'] = "SUBJECT OF THE MAIL"
  					
 body = "YOUR MESSAGE HERE"
-- email.attach(MIMEText(body, 'plain'))
+email.attach(MIMEText(body, 'plain'))
  				
-- mailer = smtplib.SMTP('smtp.gmail.com', 587)
-+ mailer = Mailer(fromaddr, "YOUR PASSWORD")
-- mailer.starttls()
-- mailer.login(fromaddr, "YOUR PASSWORD")
+mailer = smtplib.SMTP('smtp.gmail.com', 587)
+mailer.starttls()
+mailer.login(fromaddr, "YOUR PASSWORD")
 text = email.as_string()
-- mailer.sendmail(fromaddr, toaddr, text)
-+ mailer.send_mail(text, toaddr)
-- mailer.quit()
+mailer.sendmail(fromaddr, toaddr, text)
+mailer.quit()
 ```
-As you can see, it reduces code size and complexity. It also has simple names, so you can easily code something new. Why emailHelpers? It's pretty well [documented](#emailhelpers-docs) too.  
+`emailHelpers` makes it easier to code your project, reduces the complexity of it, and also makes it easier to read (in my opinion).  
 To install emailHelpers, use pip. On a platform that only has Python 3:
 ```bash
 python -m pip install emailHelpers
@@ -40,6 +48,7 @@ On a platform with Python 2 and Python 3:
 ```bash
 python3 -m pip install emailHelpers
 ```
+*You may want to add a `--user` to the end.*
 Get started coding with emailHelpers now with these docs:
 ## emailHelpers Docs
 emailHelpers is a combination of 2 classes to make the sending and managing of emails in python easier.
