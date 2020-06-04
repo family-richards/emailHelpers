@@ -57,7 +57,7 @@ jobs:
       if: matrix.python-version == 3.8
       with:
         name: dist
-        path: ~/normal/dist/
+        path: ./normal/dist/
     - name: Test emailHelpers with coverage and pytest
       run: |
         cd normal
