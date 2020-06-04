@@ -48,8 +48,13 @@ jobs:
         python3 setup.py sdist bdist_wheel
         ls dist
         pip install dist/*.whl
+    - name: Show structure
+      if: matrix.python-version == 3.8
+      run: |
+        ls -R
     - uses: actions/upload-artifact@v2
       name: Upload build
+      if: matrix.python-version == 3.8
       with:
         name: dist
         path: ~/normal/dist/
