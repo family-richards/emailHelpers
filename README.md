@@ -40,7 +40,9 @@ mailer.sendmail(fromaddr, toaddr, text)
 mailer.quit()
 ```
   
-`emailHelpers` makes it easier to code your project, reduces the complexity of it, and also makes it easier to read (in my opinion). To install emailHelpers, use pip. On a platform that only has Python 3:  
+`emailHelpers` makes it easier to code your project, reduces the complexity of it, and also makes it easier to read (in my opinion).  
+## Installing `emailHelpers`
+To install emailHelpers, use pip. On a platform that only has Python 3:  
 ```bash
 python -m pip install emailHelpers
 ```
@@ -49,7 +51,28 @@ On a platform with Python 2 and Python 3:
 python3 -m pip install emailHelpers
 ```
 *You may want to add a `--user` to the end.*
-Get started coding with emailHelpers now with these docs:
+## Quick start
+1. Find out what your Google email address and password are.
+2. Let [less secure apps access your account](https://devanswers.co/allow-less-secure-apps-access-gmail-account/).
+3. [Install `emailHelpers`](#installing-emailhelpers).
+4. You're ready! Use this code for a quickstart:
+```python3
+from emailHelpers import Mailer, Email
+fromaddr = "me@gmail.com"
+toaddr = "me@gmail.com"
+
+email = Email(fromaddr)
+email.set_to(toaddr)
+email.set_subject("emailHelpers is working!")
+email.set_body("Yahoo! Move on to the next step: https://family-richards.github.io/emailHelpers/#emailhelpers-docs")
+
+mailer = Mailer(fromaddr, "IhAv3aVeRy3eCuRePa33W0Rd")
+text = email.as_string()
+mailer.send_mail(text, toaddr)
+```
+
+
+Get started making with emailHelpers now with these docs:
   
   
   
