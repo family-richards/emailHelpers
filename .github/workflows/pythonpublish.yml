@@ -18,14 +18,14 @@ jobs:
     - uses: actions/cache@v1
       with:
         path: ~/.cache/pip
-        key: pip-packs-${{ hashFiles('**/publishrequirements.txt') }}
+        key: pip-packs-${{ hashFiles('**/publish/requirements.txt') }}
         restore-keys: |
           pip-packs-
           pip-packs
     - name: Install dependencies
       run: |
         python3 -m pip install --upgrade pip
-        pip install -r publishrequirements.txt
+        pip install -r publish/requirements.txt
     - name: Find latest release
       env:
         token: ${{ secrets.REL_PAT }}
