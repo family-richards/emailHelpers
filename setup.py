@@ -16,5 +16,7 @@ setup(name="emailHelpers",
                  python_requires='>=3.0',
                  project_urls={
                      "Tracker": "https://github.com/family-richards/emailHelpers/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc",
-                     "Source": "https://github.com/family-richards/emailHelpers/"
+                     "Source": "https://github.com/family-richards/emailHelpers/",
+                     "CI": "https://github.com/family-richards/emailHelpers/actions",
+                     "SayThanks!": "https://saythanks.io/to/kidscodingplace@gmail.com"
                  })
