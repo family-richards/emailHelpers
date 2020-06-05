@@ -29,14 +29,14 @@ jobs:
     - uses: actions/cache@v1
       with:
         path: ~/.cache/pip
-        key: pip-packs-${{ hashFiles('**/testrequirements.txt') }}
+        key: pip-packs-${{ hashFiles('**/test/requirements.txt') }}
         restore-keys: |
           pip-packs-
           pip-packs
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        if [ -f normal/testrequirements.txt ]; then pip install -r normal/testrequirements.txt; fi
+        if [ -f normal/test/requirements.txt ]; then pip install -r normal/test/requirements.txt; fi
     - name: Lint with flake8
       run: |
         cd normal
