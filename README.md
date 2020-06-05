@@ -1,6 +1,6 @@
 # emailHelpers
-![Test lint and build](https://github.com/family-richards/Python-Email-Helpers/workflows/Test%20lint%20and%20build/badge.svg) ![Upload To PyPi](https://github.com/family-richards/Python-Email-Helpers/workflows/Upload%20To%20PyPi/badge.svg)  
-![emailHelpers logoimage](pyart-helpers.png)  
+[![Test lint and build](https://github.com/family-richards/Python-Email-Helpers/workflows/Test%20lint%20and%20build/badge.svg)](https://github.com/family-richards/emailhelpers/actions?query=workflow%3A%22Test+lint+and+build%22) [![Upload To PyPi](https://github.com/family-richards/Python-Email-Helpers/workflows/Upload%20To%20PyPi/badge.svg)](https://github.com/family-richards/emailhelpers/actions?query=workflow%3A%22Upload+To+PyPi%22)  
+[![emailHelpers logoimage](https://raw.githubusercontent.com/family-richards/emailHelpers/master/pyart-helpers.png)]()  
 emailHelpers is a wrapper for the `smtplib` and `email` packages so it's easy to send emails in your projects. Here's an example of how to send a `Gmail` message:
 ```python3
 from emailHelpers import Mailer, Email
@@ -39,8 +39,8 @@ text = email.as_string()
 mailer.sendmail(fromaddr, toaddr, text)
 mailer.quit()
 ```
-`emailHelpers` makes it easier to code your project, reduces the complexity of it, and also makes it easier to read (in my opinion).  
-To install emailHelpers, use pip. On a platform that only has Python 3:
+  
+`emailHelpers` makes it easier to code your project, reduces the complexity of it, and also makes it easier to read (in my opinion). To install emailHelpers, use pip. On a platform that only has Python 3:  
 ```bash
 python -m pip install emailHelpers
 ```
@@ -50,6 +50,9 @@ python3 -m pip install emailHelpers
 ```
 *You may want to add a `--user` to the end.*
 Get started coding with emailHelpers now with these docs:
+  
+  
+  
 ## emailHelpers Docs
 emailHelpers is a combination of 2 classes to make the sending and managing of emails in python easier.
 It's made of two classes: Mailer and Email.
