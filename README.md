@@ -1,15 +1,18 @@
 <h1 align="center">emailHelpers</h1>
 <p align="center">
 <a href="https://github.com/family-richards/emailhelpers/actions?query=workflow%3A%22Test+lint+and+build%22">
-  <img alt="Test lint and build" src="https://img.shields.io/github/workflow/status/family-richards/emailHelpers/Test lint and build?logo=github&label=Lint%20%2B%20Build&labelColor=black"/>
+  <img alt="Test lint and build status" src="https://img.shields.io/github/workflow/status/family-richards/emailHelpers/Test lint and build?logo=github&label=Lint%20%2B%20Build&labelColor=080808"/>
 </a>
 <br>
 <a href="https://github.com/family-richards/emailhelpers/actions?query=workflow%3A%22Upload+To+PyPi%22">
-  <img alt="Test lint and build" src="https://img.shields.io/github/workflow/status/family-richards/emailHelpers/Upload To PyPi?logo=github&label=Upload%20to%20PyPi&labelColor=black"/>
+  <img alt="Upload to PyPi status" src="https://img.shields.io/github/workflow/status/family-richards/emailHelpers/Upload To PyPi?logo=github&label=Upload%20to%20PyPi&labelColor=080808"/>
+</a>
+<br>
+<a href="https://github.com/family-richards/emailhelpers/actions?query=workflow%3A%22Upload+To+PyPi%22">
+  <img alt="VirusTotal check status" src="https://img.shields.io/github/workflow/status/family-richards/emailHelpers/VirusTotal Check?logo=virustotal&label=VirusTotal%20Scan&labelColor=080808&logoColor=394EFF"/>
 </a>
 </p>
   
-[![VirusTotal Check](https://github.com/family-richards/emailHelpers/workflows/VirusTotal%20Check/badge.svg)](https://github.com/family-richards/emailHelpers/actions?query=workflow%3A%22VirusTotal+Check%22) [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/kidscodingplace@gmail.com)  
 [![emailHelpers logoimage](https://raw.githubusercontent.com/family-richards/emailHelpers/master/pyart-helpers.png)]()  
 emailHelpers is a wrapper for the `smtplib` and `email` packages so it's easy to send emails in your projects. Here's an example of how to send a `Gmail` message:
 ```python3
@@ -188,4 +191,5 @@ attribute = email.get_attr("attribute to get")
 email.set_attr("attribute to set","new value of attribute")
 ```
 You're dedicated to read all of this, you know. Good job! I hope that this library makes managing emails easier.
-See you later! If you have any questions or bugs, feel free to make an issue. Enjoy!
+See you later! If you have any questions or bugs, feel free to make an issue. Enjoy!  
+<p align="center"><a href="https://saythanks.io/to/kidscodingplace@gmail.com">Consider a thanks</a></p>
