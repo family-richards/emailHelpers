@@ -1,5 +1,5 @@
 from setuptools import find_packages, setup
-version = "1.1.2"
+version = "1.2.0"
 with open("README.md", "r") as fh:
     long_description = fh.read()
 setup(name="emailHelpers",
