@@ -1,5 +1,15 @@
-# emailHelpers
-[![Test lint and build](https://github.com/family-richards/Python-Email-Helpers/workflows/Test%20lint%20and%20build/badge.svg)](https://github.com/family-richards/emailhelpers/actions?query=workflow%3A%22Test+lint+and+build%22) [![Upload To PyPi](https://github.com/family-richards/Python-Email-Helpers/workflows/Upload%20To%20PyPi/badge.svg)](https://github.com/family-richards/emailhelpers/actions?query=workflow%3A%22Upload+To+PyPi%22) [![VirusTotal Check](https://github.com/family-richards/emailHelpers/workflows/VirusTotal%20Check/badge.svg)](https://github.com/family-richards/emailHelpers/actions?query=workflow%3A%22VirusTotal+Check%22) [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/kidscodingplace@gmail.com)  
+<h1 align="center">emailHelpers</h1>
+<p align="center">
+<a href="https://github.com/family-richards/emailhelpers/actions?query=workflow%3A%22Test+lint+and+build%22">
+  <img alt="Test lint and build" src="https://img.shields.io/github/workflow/status/family-richards/emailHelpers/Test lint and build?logo=github&label=Lint%20%2B%20Build&labelColor=black"/>
+</a>
+<br>
+<a href="https://github.com/family-richards/emailhelpers/actions?query=workflow%3A%22Upload+To+PyPi%22">
+  <img alt="Test lint and build" src="https://img.shields.io/github/workflow/status/family-richards/emailHelpers/Upload To PyPi?logo=github&label=Upload%20to%20PyPi&labelColor=black"/>
+</a>
+</p>
+  
+[![VirusTotal Check](https://github.com/family-richards/emailHelpers/workflows/VirusTotal%20Check/badge.svg)](https://github.com/family-richards/emailHelpers/actions?query=workflow%3A%22VirusTotal+Check%22) [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/kidscodingplace@gmail.com)  
 [![emailHelpers logoimage](https://raw.githubusercontent.com/family-richards/emailHelpers/master/pyart-helpers.png)]()  
 emailHelpers is a wrapper for the `smtplib` and `email` packages so it's easy to send emails in your projects. Here's an example of how to send a `Gmail` message:
 ```python3
