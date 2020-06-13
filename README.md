@@ -66,7 +66,7 @@ python3 -m pip install emailHelpers
 ```
 *You may want to add a `--user` to the end.*
 ###### Warning: The "proper" way to send Gmail is with their official [API](https://developers.google.com/gmail/api/quickstart/python). This is more secure, so if you use Gmail, consider that instead.  
-Otherwise, as long as you have an STMP server, emailHelpers is just fine with that.  
+###### Otherwise, as long as you have an STMP server, emailHelpers is just fine with that.  
 ## Quick start
 1. Find out what your Google email address and password are.
 2. Let [less secure apps access your account](https://devanswers.co/allow-less-secure-apps-access-gmail-account/).
