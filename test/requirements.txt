@@ -2,4 +2,4 @@ wheel==0.34.2
 flake8==3.8.3
 setuptools==49.1.0
 pytest==5.4.3
-coverage==5.1
+coverage==5.2
