@@ -39,14 +39,14 @@ fromaddr = "YOUR ADDRESS"
 toaddr = "ADDRESS YOU WANT TO SEND TO"
 
 email = MIMEMultipart()
-email['From'] = fromaddr
-email['To'] = toaddr
-email['Subject'] = "SUBJECT OF THE MAIL"
+email["From"] = fromaddr
+email["To"] = toaddr
+email["Subject"] = "SUBJECT OF THE MAIL"
  					
 body = "YOUR MESSAGE HERE"
-email.attach(MIMEText(body, 'plain'))
+email.attach(MIMEText(body, "plain"))
  				
-mailer = smtplib.SMTP('smtp.gmail.com', 587)
+mailer = smtplib.SMTP("smtp.gmail.com", 587)
 mailer.starttls()
 mailer.login(fromaddr, "YOUR PASSWORD")
 text = email.as_string()
@@ -166,24 +166,24 @@ To attach a file:
 email.add_attachment_from_file("intruder.png")
 ```
 #### Adding `emailHelpers` to your `Email`
-Finally, just for the fun of it, you can call `addMyselfToEmail` to add the library as an attachment to your `Email` object. It's used like this:  
+Finally, just for the fun of it, you can call `add_myself_to_email` to add the library as an attachment to your `Email` object. It's used like this:  
 ```python3
-email.add_myself_to_mail()
+email.add_myself_to_email()
 ```
 ## Internals... probably not needed by you
 ### Attachments
 If you want to attatch a file from a variable, use `add_attachment`. It takes the attachment and the filename to call it.  
 Use it like this:  
 ```python3
-email.add_attachment(loadedattachment, "filename")
+email.add_attachment(loaded_attachment, "filename")
 ```
-To load a file, use `loadAttachment`. It will return a file that can be passed to `addAttachment`.
+To load a file, use `load_attachment`. It will return a file that can be passed to `add_attachment`.
 Use it like this:  
 ```python3
 file = email.load_attachment(["complex.stuff"])
 ```
 The simpler function, if you don't want to disguise your filename, is addAttachmentFromFile. It was covered [earlier](#attaching-files-for-email).
-To get the `MIMEMultipart` behind the object, use `MimeBehind`.
+To get the `MIMEMultipart` behind the object, use `mime_behind`.
 Use it like this:  
 ```python3
 multipart = email.mime_behind()
