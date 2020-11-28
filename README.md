@@ -171,7 +171,8 @@ Finally, just for the fun of it, you can call `addMyselfToEmail` to add the libr
 email.add_myself_to_mail()
 ```
 ## Internals... probably not needed by you
-If you want to attatch a file from a variable, use `addAttachment`. It takes the attachment and the filename to call it.  
+### Attachments
+If you want to attatch a file from a variable, use `add_attachment`. It takes the attachment and the filename to call it.  
 Use it like this:  
 ```python3
 email.add_attachment(loadedattachment, "filename")
@@ -187,11 +188,12 @@ Use it like this:
 ```python3
 multipart = email.mime_behind()
 ```
-To access properties of the `MIMEMultipart`, use `getAttr` and `setAttr`.
+### Custom headers
+To access properties of the `MIMEMultipart`, use `get_attr` and `set_attr`.
 They are used like this:  
 ```python3
 attribute = email.get_attr("attribute to get")
-email.set_attr("attribute to set","new value of attribute")
+email.set_attr("attribute to set"," new value of attribute")
 ```
 You're dedicated to read all of this, you know. Good job! I hope that this library makes managing emails easier.
 See you later! If you have any questions or bugs, feel free to make an issue. Enjoy!  
