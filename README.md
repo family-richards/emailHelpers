@@ -182,7 +182,7 @@ Use it like this:
 ```python3
 file = email.load_attachment(["complex.stuff"])
 ```
-The simpler function, if you don't want to disguise your filename, is addAttachmentFromFile. It was covered [earlier](#attaching-files-for-email).
+The simpler function, if you don't want to disguise your filename, is add_attachment_from_file. It was covered [earlier](#attaching-files-for-email).
 To get the `MIMEMultipart` behind the object, use `mime_behind`.
 Use it like this:  
 ```python3
