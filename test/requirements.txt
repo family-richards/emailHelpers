@@ -1,5 +1,5 @@
 wheel==0.37.0
 flake8==3.9.2
-setuptools==58.1.0
+setuptools==59.2.0
 pytest==6.0.1
 coverage==5.5
