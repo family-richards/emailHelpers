@@ -8,7 +8,7 @@ updates:
 - package-ecosystem: pip
   directory: "/test/"
   schedule:
-    interval: daily
+    interval: monthly
     time: '11:00'
   open-pull-requests-limit: 3
   assignees:
